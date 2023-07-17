@@ -1,11 +1,17 @@
-import { View, Text } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const Profile = () => {
+  const cartItem = useSelector((state) => state.cart.items)
   return (
-    <View>
-      <Text>Profile</Text>
-    </View>
+    <FlatList
+      data={cartItem}
+      renderItem={({item}) => (
+        <Text>{item.name}</Text>
+      )}
+    ></FlatList>
   )
 }
 

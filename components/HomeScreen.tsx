@@ -1,42 +1,56 @@
-import { View, Text, StyleSheet, SafeAreaView, Image, Pressable, FlatList } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, Image, Pressable, FlatList , useWindowDimensions} from 'react-native'
 import React from 'react'
-import products from '../data/products'
+import product from '../data/products'
 import Navbar from './Navbar/Navbar'
+import { useSelector, useDispatch } from 'react-redux'
+import { productSlice } from '../src/productSlice'
+import { useNavigation } from '@react-navigation/native'
 
 
-type IProps = {
+const HomeScreen = () => {
+  const { navigate }: any = useNavigation();
+  const products = useSelector((state) => state.products.products)
+  const dispatch = useDispatch();
 
-}
-
-
-const HomeScreen = (props: IProps) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Navbar></Navbar>
       <View style={styles.products}>
-        <Text style={{ color: 'blue', paddingHorizontal: 10 , fontWeight:'bold'}}>View All</Text>
+        <Text style={{ color: 'blue', paddingHorizontal: 10, fontWeight: 'bold' }}>View All</Text>
         <FlatList
           data={products}
           renderItem={({ item }) => (
             <View style={styles.products}>
-              <Image source={{ uri: item.image }} style={styles.image}></Image>
+              <Pressable onPress={() => {
+                dispatch(productSlice.actions.setSelectedProduct(item.id))
+                navigate('ProductDetailScreen')
+              }
+              } >
+                <Image source={{ uri: item.image }} style={styles.image}></Image>
+              </Pressable>
             </View>
           )}
           horizontal
           showsHorizontalScrollIndicator={false}
         ></FlatList>
-      </View>
+      </View >
 
       <View style={styles.detailProducts}>
-        <Text style = {{paddingHorizontal:10 , fontWeight:'500' , color:'gray'}}>Product Details</Text>
+        <Text style={{ paddingHorizontal: 10, fontWeight: '500', color: 'gray' }}>Product Details</Text>
         <FlatList
           data={products}
           renderItem={({ item }) => (
             <View style={{ alignItems: 'center', padding: 20 }}>
               <Text style={{ fontWeight: 'bold' }}>{item.name}</Text>
-              <Image source={{ uri: item.image }} style={styles.image}></Image>
+              <Pressable onPress={() => {
+                navigate('ProductDetailScreen')
+                dispatch(productSlice.actions.setSelectedProduct(item.id))
+              }} >
+                <Image source={{ uri: item.image }} style={styles.image}></Image>
+              </Pressable>
               <Text style={{ fontWeight: 'bold' }}>{item.price} $</Text>
             </View>
+
           )}
           pagingEnabled={true}
           horizontal
@@ -44,7 +58,7 @@ const HomeScreen = (props: IProps) => {
         ></FlatList>
       </View>
 
-    </SafeAreaView>
+    </SafeAreaView >
   )
 }
 
