@@ -1,10 +1,11 @@
-import { View, Text, StyleSheet, SafeAreaView, Image, Pressable, FlatList , useWindowDimensions} from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, Image, Pressable, FlatList, useWindowDimensions } from 'react-native'
 import React from 'react'
 import product from '../data/products'
 import Navbar from './Navbar/Navbar'
 import { useSelector, useDispatch } from 'react-redux'
 import { productSlice } from '../src/productSlice'
 import { useNavigation } from '@react-navigation/native'
+import { FontAwesome5 } from '@expo/vector-icons'
 
 
 const HomeScreen = () => {
@@ -58,6 +59,14 @@ const HomeScreen = () => {
         ></FlatList>
       </View>
 
+      <View style={styles.footer}>
+        <Pressable style={{ padding: 10 }}><FontAwesome5 name='facebook' size={26} ></FontAwesome5></Pressable>
+        <Pressable style={{ padding: 10 }}><FontAwesome5 name='github' size={26} ></FontAwesome5></Pressable>
+        <Pressable style={{ padding: 10 }}><FontAwesome5 name='linkedin' size={26} ></FontAwesome5></Pressable>
+      </View>
+
+      <Text style = {{fontWeight:'300' , fontSize:16 , color:'gray' , alignSelf:'center'}}>...</Text>
+
     </SafeAreaView >
   )
 }
@@ -78,6 +87,16 @@ const styles = StyleSheet.create({
 
   detailProducts: {
     marginTop: 50,
+
+  },
+
+  footer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    position: 'relative',
+    marginTop:50
+
 
   }
 })
