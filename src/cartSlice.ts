@@ -20,7 +20,8 @@ export const cartSlice = createSlice({
       console.log(cartItem, 'cartitem')
 
       if (cartItem) {
-        cartItem.quantity += 1;
+        cartItem.quantity += 1;     
+        cartItem.product.size = newProduct.size;
       } else {
         state.items.push({ product: newProduct, quantity: 1 })
       }

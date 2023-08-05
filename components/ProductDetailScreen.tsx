@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, StyleSheet, Dimensions, ScrollView, Pressable } from 'react-native'
+import { View, Text, FlatList, Image, StyleSheet, Dimensions, ScrollView, Pressable, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { productSlice } from '../src/productSlice'
 import { useDispatch, useSelector } from 'react-redux'
@@ -25,14 +25,27 @@ const ProductDetailScreen = () => {
           pagingEnabled={true}
         ></FlatList>
 
-        <View style={{ padding: 10 , marginBottom:75}}>
+        <FlatList
+          data={product.sizes}
+          renderItem={({ item }) => (
+            <>
+              <TouchableOpacity onPress={ () => dispatch(productSlice.actions.setSelectedSize(item)) }><Text style= {{ paddingHorizontal: 10 }}>{item}</Text></TouchableOpacity>
+            </>
+          )}
+
+          horizontal
+        ></FlatList>
+
+        <View style={{ padding: 10, marginBottom: 75 }}>
           <Text style={{ fontWeight: 'bold', fontSize: 22, marginBottom: 15 }}>{product.name}</Text>
           <Text style={{ fontSize: 16, fontWeight: '500', paddingHorizontal: 10 }}>{product.description}</Text>
         </View>
       </ScrollView>
-      <Pressable style={styles.button} onPress={() => dispatch(cartSlice.actions.addCartItem({product}))}>
+
+      <Pressable style={styles.button} onPress={() => dispatch(cartSlice.actions.addCartItem({ product }))}>
         <Text style={{ textTransform: 'uppercase', fontWeight: 'bold', color: 'white' }}>Add to Card</Text>
       </Pressable>
+
 
 
 

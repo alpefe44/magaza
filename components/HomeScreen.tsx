@@ -23,7 +23,7 @@ const HomeScreen = () => {
           renderItem={({ item }) => (
             <View style={styles.products}>
               <Pressable onPress={() => {
-                dispatch(productSlice.actions.setSelectedProduct(item.id))
+                dispatch(productSlice.actions.setSelectedProduct(item))
                 navigate('ProductDetailScreen')
               }
               } >
@@ -45,7 +45,7 @@ const HomeScreen = () => {
               <Text style={{ fontWeight: 'bold' }}>{item.name}</Text>
               <Pressable onPress={() => {
                 navigate('ProductDetailScreen')
-                dispatch(productSlice.actions.setSelectedProduct(item.id))
+                dispatch(productSlice.actions.setSelectedProduct(item))
               }} >
                 <Image source={{ uri: item.image }} style={styles.image}></Image>
               </Pressable>

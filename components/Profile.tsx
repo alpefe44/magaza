@@ -15,7 +15,7 @@ const Profile = () => {
             <Image source={{ uri: item.product.image }} style={{ aspectRatio: 1, width: 200 }}></Image>
             <View style={{ marginTop: 10, flex: 1 }}>
               <Text style={styles.name}>{item.product.name}</Text>
-              <Text style={styles.size}>Size {cartItem.size}</Text>
+              <Text style={styles.size}>{item.product.size}</Text>
               <View style={styles.footer}>
                 <Feather
                   name="minus-circle"

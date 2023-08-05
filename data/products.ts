@@ -12,6 +12,7 @@ export default [
     name: "Wild Berry",
     price: 160,
     sizes: [39, 40, 41],
+    size: null,
     description: `Inspired by the original that debuted in 1985, the Air Jordan 1 Low delivers a clean, classic look that's familiar yet fresh. With an iconic design that blends seamlessly with any fit, these shoes are perfect for taking charge.
 
 Advantages:
@@ -37,6 +38,7 @@ A timeless rubber sole combines with a soft sockliner and encapsulated Nike Air 
     name: "Air Force 1",
     price: 169,
     sizes: [39, 40, 41, 42, 43],
+    size: null,
     description: `Inspired by the original that debuted in 1985, the Air Jordan 1 Low delivers a clean, classic look that's familiar yet fresh. With an iconic design that blends seamlessly with any fit, these shoes are perfect for taking charge.
 
 Advantages:
@@ -58,6 +60,7 @@ A timeless rubber sole combines with a soft sockliner and encapsulated Nike Air 
     name: "Nike Cosmic",
     price: 129,
     sizes: [38, 39, 40, 41, 42],
+    size: null,
     description: `Inspired by the original that debuted in 1985, the Air Jordan 1 Low delivers a clean, classic look that's familiar yet fresh. With an iconic design that blends seamlessly with any fit, these shoes are perfect for taking charge.
 
 Advantages:
@@ -79,6 +82,7 @@ A timeless rubber sole combines with a soft sockliner and encapsulated Nike Air 
     name: "Retro High",
     price: 119,
     sizes: [39, 40, 41, 42, 45],
+    size: null,
     description: `Inspired by the original that debuted in 1985, the Air Jordan 1 Low delivers a clean, classic look that's familiar yet fresh. With an iconic design that blends seamlessly with any fit, these shoes are perfect for taking charge.
 
 Advantages:
@@ -100,6 +104,7 @@ A timeless rubber sole combines with a soft sockliner and encapsulated Nike Air 
     name: "Pegas Turbo",
     price: 95,
     sizes: [36, 40, 41, 42, 47],
+    size: null,
     description: `Inspired by the original that debuted in 1985, the Air Jordan 1 Low delivers a clean, classic look that's familiar yet fresh. With an iconic design that blends seamlessly with any fit, these shoes are perfect for taking charge.
 
 Advantages:
@@ -121,6 +126,7 @@ A timeless rubber sole combines with a soft sockliner and encapsulated Nike Air 
     name: "Nike Blazer",
     price: 200,
     sizes: [37, 38, 40, 41, 42],
+    size: null,
     description: `Inspired by the original that debuted in 1985, the Air Jordan 1 Low delivers a clean, classic look that's familiar yet fresh. With an iconic design that blends seamlessly with any fit, these shoes are perfect for taking charge.
 
 Advantages:
@@ -142,6 +148,7 @@ A timeless rubber sole combines with a soft sockliner and encapsulated Nike Air 
     name: "Nike Waffle",
     price: 154,
     sizes: [39, 40, 41],
+    size: null,
     description: `Inspired by the original that debuted in 1985, the Air Jordan 1 Low delivers a clean, classic look that's familiar yet fresh. With an iconic design that blends seamlessly with any fit, these shoes are perfect for taking charge.
 
 Advantages:
@@ -163,6 +170,7 @@ A timeless rubber sole combines with a soft sockliner and encapsulated Nike Air 
     name: "Nike Reax",
     price: 123,
     sizes: [40, 41, 42],
+    size: null,
     description: `Inspired by the original that debuted in 1985, the Air Jordan 1 Low delivers a clean, classic look that's familiar yet fresh. With an iconic design that blends seamlessly with any fit, these shoes are perfect for taking charge.
 
 Advantages:
@@ -184,6 +192,7 @@ A timeless rubber sole combines with a soft sockliner and encapsulated Nike Air 
     name: "Nike Dunk",
     price: 119,
     sizes: [40, 41, 42, 43, 44],
+    size: null,
     description: `Inspired by the original that debuted in 1985, the Air Jordan 1 Low delivers a clean, classic look that's familiar yet fresh. With an iconic design that blends seamlessly with any fit, these shoes are perfect for taking charge.
 
 Advantages:
